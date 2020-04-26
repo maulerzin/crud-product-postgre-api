@@ -2,7 +2,7 @@
 Description: With this API developers will be able to INSERT, DELETE, UPDATE AND READ Products from a table "peoducts".
 >Version: 1.0.0.
 
->Technologies: For this API i've used: 
+>Technologies - For this API i've used: 
 
 >springboot framework with java 11.
 
