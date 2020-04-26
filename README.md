@@ -41,9 +41,6 @@ Description: With this API developers will be able to INSERT, DELETE, UPDATE AND
         
     },
 
-
-
-
 > GET(/products)
 
 >Description: This resource shows all products registred on the table "products in a List".
@@ -86,5 +83,73 @@ Description: With this API developers will be able to INSERT, DELETE, UPDATE AND
         "productPrice": "1500.00"
     }
     ]
+    
+> GET(/products/{id})
+
+>Description: This resource shows a selected product by its Id".
+
+> Payload Example :
+
+    {
+
+    }
+
+> Response Example for (/products/1) :
+
+       {
+        "id": 1,
+        
+        "productName": "Fan",
+        
+        "productDescription": "Fan 110V",
+        
+        "productPrice": "100.00"
+        
+        },
+        
+ > PUT(/products)
+
+>Description: This resource updates a product on the table "products".
+
+> Payload Example :
+
+    {
+      "productName": "Fan",
+
+      "productDescription": "110V Fan",
+
+      "productPrice": "200.00"
+ 
+     },
+
+> Response Exemple :
+
+     {
+    
+        "id": 1,
+        
+        "productName": "Fan",
+        
+        "productDescription": "110V Fan",
+        
+        "productPrice": "200.00"
+        
+    },
+    
+> DELETE(/products)
+
+>Description: This resource deletes a product on the table "products".
+
+> Payload Example for (/products/1) :
+
+    {
+ 
+     }
+
+> Response Exemple :
+
+     {
+
+    }
 
 >OBS: This application is ready to run locally too.
