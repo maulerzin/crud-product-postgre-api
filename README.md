@@ -1,5 +1,6 @@
-# Product CRUD API
-Description: With this API developers will be able to INSERT, DELETE, UPDATE AND READ Products from a table "peoducts".
+# Product CRUD And Order Registration API
+Description: With this API developers will be able to INSERT, DELETE, UPDATE AND READ Products from a table "peoducts" and make roduct orders based on a pre-existent products.
+
 >Version: 1.0.0.
 
 >Technologies - For this API i've used: 
@@ -25,7 +26,7 @@ Description: With this API developers will be able to INSERT, DELETE, UPDATE AND
 
       "productPrice": "100.00"
  
-     },
+     }
 
 > Response Exemple :
 
@@ -39,7 +40,7 @@ Description: With this API developers will be able to INSERT, DELETE, UPDATE AND
         
         "productPrice": "100.00"
         
-    },
+    }
 
 > GET(/products)
 
@@ -105,7 +106,7 @@ Description: With this API developers will be able to INSERT, DELETE, UPDATE AND
         
         "productPrice": "100.00"
         
-        },
+        }
         
  > PUT(/products)
 
@@ -120,7 +121,7 @@ Description: With this API developers will be able to INSERT, DELETE, UPDATE AND
 
       "productPrice": "200.00"
  
-     },
+     }
 
 > Response Exemple :
 
@@ -134,7 +135,7 @@ Description: With this API developers will be able to INSERT, DELETE, UPDATE AND
         
         "productPrice": "200.00"
         
-    },
+    }
     
 > DELETE(/products)
 
@@ -152,4 +153,74 @@ Description: With this API developers will be able to INSERT, DELETE, UPDATE AND
 
     }
 
+>POST (/kart)
+
+Description: This resource Makes a product Order".
+
+> Payload Example :
+
+    {
+        "id": {
+            "product": {
+                "id": 2,
+                "productName": "",
+                "productDescription": "",
+                "productPrice": ""
+            }
+        },
+        "quantity": 1,
+        "price": 600.0
+    }
+
+> Response Exemple :
+    {
+        "id": {
+            "product": {
+                "id": 2,
+                "productName": "Product2",
+                "productDescription": "Product 2 Description",
+                "productPrice": 600.0
+            }
+        },
+        "quantity": 1,
+        "price": 600.0
+    }
+    
+>GET (/kart)
+
+Description: This resource shows all orders".
+
+> Payload Example :
+
+        {}
+        
+> Response Exemple :
+    
+          [
+             {
+                  "id": {
+                    "product": {
+                        "id": 2,
+                        "productName": "Product2",
+                        "productDescription": "Product2 Description",
+                        "productPrice": 1000.0
+                }
+             },
+                 "quantity": 1,
+                  "price": 1000.0
+            },
+            {
+                  "id": {
+                     "product": {
+                          "id": 3,
+                        "productName": "Product3",
+                        "productDescription": "Product3 Description",
+                        "productPrice": 1500.0
+             }
+            },
+                "quantity": 1,
+                "price": 1500.0
+            }
+        ]
+    
 >OBS: This application is ready to run locally too.
