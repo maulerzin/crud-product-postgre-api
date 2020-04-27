@@ -1,10 +1,12 @@
 package com.product.crud.crudproductpostgreapi.model;
 
-
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
@@ -17,22 +19,23 @@ public class Product {
    @NotBlank
    @Size(max = 30)
    private String productName;
+   
    @NotBlank
    @Size(max = 100)
    private String productDescription;
-   @NotBlank
-   @Size(max = 30)
-   private String  productPrice;
+
+   private Double  productPrice;
    
    public Product() {
 		
    }
 
-   public Product(String productName, String productDescription, String productPrice) {
+   public Product(String productName, String productDescription, Double productPrice) {
    	this.productDescription = productDescription;
    	this.productName = productName;
    	this.productPrice = productPrice;
    }
+
    
    public Long getId() {
 		return id;
@@ -52,10 +55,10 @@ public class Product {
 	public void setProductDescription(String productDescription) {
 		this.productDescription = productDescription;
 	}
-	public String getProductPrice() {
+	public Double getProductPrice() {
 		return productPrice;
 	}
-	public void setProductPrice(String productPrice) {
+	public void setProductPrice(Double productPrice) {
 		this.productPrice = productPrice;
 	}
 }

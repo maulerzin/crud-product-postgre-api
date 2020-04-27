@@ -24,26 +24,23 @@ public class ProductResources {
 	ProductResources(ProductRepo productRepo) {
 		this.repository = productRepo;
 	}
-	//All Products
 	@GetMapping
 	public List findAll(){
 	   return repository.findAll();
 	}
-	//Product by Id
 	@GetMapping(path = {"/{id}"})
-	public ResponseEntity<?>findById(@PathVariable long id){
+	public ResponseEntity<?>findById(@PathVariable Long id){
 	   return repository.findById(id)
 	           .map(record -> ResponseEntity.ok().body(record))
 	           .orElse(ResponseEntity.notFound().build());
 	}
-	//Product Registration
 	@PostMapping
 	public Product create(@RequestBody Product product){
 	   return repository.save(product);
 	}
 	
 	@PutMapping(value="/{id}")
-	public ResponseEntity<?> update(@PathVariable("id") long id, @RequestBody Product product) {
+	public ResponseEntity<?> update(@PathVariable("id") Long id, @RequestBody Product product) {
 	   return repository.findById(id)
 	           .map(record -> {
 	               record.setProductDescription(product.getProductDescription());
@@ -55,7 +52,7 @@ public class ProductResources {
 	}
 
 	@DeleteMapping(path ={"/{id}"})
-	public ResponseEntity<?> delete(@PathVariable long id) {
+	public ResponseEntity<?> delete(@PathVariable Long id) {
 	   return repository.findById(id)
 	           .map(record -> {
 	               repository.deleteById(id);

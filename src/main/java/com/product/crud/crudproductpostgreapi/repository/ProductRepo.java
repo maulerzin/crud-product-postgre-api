@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.product.crud.crudproductpostgreapi.model.Product;
 
 @Repository
-public interface ProductRepo extends JpaRepository<Product, Long> {}
+public interface ProductRepo extends JpaRepository<Product, Long> {
+
+}
